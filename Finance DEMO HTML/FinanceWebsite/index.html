@@ -1,0 +1,201 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>RNN Stock Market Analysis</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body>
+
+		<!-- Header -->
+			<header id="header" class="alt">
+				<!-- <div class="logo"><a href="index.html">RNN  <span>Stock Market application</span></a></div> -->
+				<a href="#menu">Menu</a>
+			</header>
+
+		<!-- Nav -->
+			<nav id="menu">
+				<ul class="links">
+					<li><a href="index.html">Home</a></li>
+					<li><a href="generic.html">Demo</a></li>
+					<li><a href="https://github.com/tristan-thomas/StockMarketRNN">Github</a></li>
+
+				</ul>
+			</nav>
+
+		<!-- Banner -->
+			<section class="banner full">
+				<!-- <article>
+					<img src="images/Picture6.png" alt="" />
+					
+				</article> -->
+				<article>
+					<img src="images/slide05.jpg" alt="" />
+					<div class="inner">
+						<header>
+							<p>Vinayak Sharma, Tristan Thomas, Sam Ghaliyini</p>
+							<h3>Recursive Nueral Network Stock Market Analysis</h3>
+						</header>
+					</div>
+				</article>
+				<!-- <article>
+					<img src="images/slide03.jpg"  alt="" />
+					<div class="inner">
+						<header>
+							<p>Sed cursus aliuam veroeros lorem ipsum nullam</p>
+							<h2>Tempus dolor</h2>
+						</header>
+					</div>
+				</article>
+				<article>
+					<img src="images/slide04.jpg"  alt="" />
+					<div class="inner">
+						<header>
+							<p>Adipiscing lorem ipsum feugiat sed phasellus consequat</p>
+							<h2>Etiam feugiat</h2>
+						</header>
+					</div>
+				</article>
+				<article>
+					<img src="images/slide05.jpg"  alt="" />
+					<div class="inner">
+						<header>
+							<p>Ipsum dolor sed magna veroeros lorem ipsum</p>
+							<h2>Lorem adipiscing</h2>
+						</header>
+					</div>
+				</article> -->
+			</section>
+
+				<section id="10" class="wrapper style2">
+				<div class="inner">
+					<header class="align-center">
+						<h2>Abstract</h2>
+						
+						
+					</header>
+					<p>  The first tasks we were involved in can be classified as “processing” data for our RNN. To prepare a matrix for our RNN we created 3 separate functions. Our first function which we named TrendLines will take in a dataframe and output k trend lines as a dictionary. Our input dataframe is extracted from the Yahoo Finance suite inside python. The resulting dataframe from TrendLines can be pushed forward as an input into our second function which we named MACD, this function outputs a Dataframe which is the input appended with a MACD column. The resulting DataFrame from MACD is then used as an input for a third function named SandR. This function outputs a DataFrame with another appended column containing support and resistance data and another column containing euclidean distances from the peaks and valleys. This Final DataFrame will be used in our RNN. We runn a RNN with multiple hidden LSTM layers using this dataframe to predict the future movement of the stock. </p>
+				</div>
+			</section>
+			<section id="11" class="wrapper style2">
+				<div class="inner">
+					<header class="align-center">
+						<h2>Methadology for feature creation</h2>
+						
+						
+					</header>
+					<p>  For our first function TrendLines, we ran a hill climbing algorithm (outputs a dictionary), and then predicted trendlines for all the peaks and valleys. For our Second Function MACD we simply calculated the MACD values at each timestamp. For our third function, we ran a hill climbing algorithm again,and then used the dictionary output to run through the peaks and valleys with a 5% bucket to find “repeated” values and define proper resistance and support points. Then we ran through the entire dataset and found the euclidean distance from the nearest peak and nearest valley. For all functions we appended the computed data to the input DataFrame and returned it.  </p>
+				</div>
+			</section>
+
+		<!-- One -->
+			<section id="one" class="wrapper style2">
+				<div class="inner">
+					<div class="grid-style">
+
+						<div>
+							<div class="box">
+								<div class="image fit">
+									<img src="images/Picture1.png" alt="" />
+								</div>
+								<div class="content">
+									<header class="align-center">
+										<p>How we created Resistance and Support Buckets</p>
+										<h2>Resistance and Support</h2>
+									</header>
+									<p> Cras aliquet urna ut sapien tincidunt, quis malesuada elit facilisis. Vestibulum sit amet tortor velit. Nam elementum nibh a libero pharetra elementum. Maecenas feugiat ex purus, quis volutpat lacus placerat malesuada.</p>
+									<footer class="align-center">
+										<a href="#" class="button alt">Learn More</a>
+									</footer>
+								</div>
+							</div>
+						</div>
+
+						<div>
+							<div class="box">
+								<div class="image fit">
+									<img src="images/p2.png" alt="" />
+								</div>
+								<div class="content">
+									<header class="align-center">
+										<p>How we created Moving Averages (Rolling & Exponential)</p>
+										<h2>MACD</h2>
+									</header>
+									<p> Cras aliquet urna ut sapien tincidunt, quis malesuada elit facilisis. Vestibulum sit amet tortor velit. Nam elementum nibh a libero pharetra elementum. Maecenas feugiat ex purus, quis volutpat lacus placerat malesuada.</p>
+									<footer class="align-center">
+										<a href="#" class="button alt">Learn More</a>
+									</footer>
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</section>
+
+		<!-- Two -->
+			<section id="two" class="wrapper style3">
+				<div class="inner">
+					<header class="align-center">
+						
+						<h2>Nueral Network Architecture</h2>
+						<p>Nam vel ante sit amet libero scelerisque facilisis eleifend vitae urna Cras aliquet urna ut sapien tincidunt, quis malesuada elit facilisis. Vestibulum sit amet tortor velit. Nam elementum nibh a libero pharetra elementum. Maecenas feugiat ex purus, quis volutpat lacus placerat malesuada. Cras aliquet urna ut sapien tincidunt, quis malesuada elit facilisis. Vestibulum sit amet tortor velit. Nam elementum nibh a libero pharetra elementum. Maecenas feugiat ex purus, quis volutpat lacus placerat malesuada. Cras aliquet urna ut sapien tincidunt, quis malesuada elit facilisis. Vestibulum sit amet tortor velit. Nam elementum nibh a libero pharetra elementum. Maecenas feugiat ex purus, quis volutpat lacus placerat malesuada. Cras aliquet urna ut sapien tincidunt, quis malesuada elit facilisis. Vestibulum sit amet tortor velit. Nam elementum nibh a libero pharetra elementum. Maecenas feugiat ex purus, quis volutpat lacus placerat malesuada.</p>
+					</header>
+				</div>
+			</section>
+
+		<!-- Three -->
+			<section id="three" class="wrapper style2">
+				<div class="inner">
+					<header class="align-center">
+						<p class="special">Our RNN after being fed features: MACD, R&S, Volume, Open, Low, Close, High was able to correctly predict stock swings for up to 2 weeks. </p>
+						<h2>RNN Prediction</h2>
+					</header>
+					<div class="gallery">
+						<div>
+							<div class="image fit">
+								<a href="#"><img src="images/p20.png" alt=""/> </a>
+							</div>
+						</div>
+						<div>
+							<div class="image fit">
+								<a href="#"><img src="images/Picture4.png" alt="" /></a>
+							</div>
+						</div>
+						<!-- div>
+							<div class="image fit">
+								<a href="#"><img src="images/pic03.jpg" alt="" /></a>
+							</div>
+						</div>
+						<div>
+							<div class="image fit">
+								<a href="#"><img src="images/pic04.jpg" alt="" /></a>
+							</div>
+						</div> -->
+					</div>
+				</div>
+			</section>
+
+
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="container">
+					<ul class="icons">
+						<li><a href="#" class="icon fa-github"><span class="label">Twitter</span></a></li>
+
+					</ul>
+				</div>
+				
+			</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
